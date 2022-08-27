@@ -7,28 +7,15 @@ class Manager extends TeamMember {
         
         this.officeNumber = officeNumber;
     }
-
-    // console log values (test only)
-    consoleValues(){
-        console.log(`${this.name}`);
-        console.log(`${this.id}`);
-        console.log(`${this.email}`);
-        console.log(`${this.officeNumber}`);
-    }
     
-    // getName(){
-    //     return this.name;
-    // }
+    getOfficeNumber() {
+        return this.officeNumber;
+    }
 
-    // getId(){
-    //     return this.id;
-    // }
+    position() {
+        return 'Manager';
+    }
 
-    // getEmail(){
-    //     return this.email;
-    // }
 }
 
-const randy = new Manager('randy', 1234, 'test', 4521);
-randy.consoleValues();
 module.exports = Manager;
