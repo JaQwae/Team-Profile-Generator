@@ -13,4 +13,4 @@ class TeamMember {
     }
 }
 
-const tom = new Employee('Tom', 1234, 'tom@mail.com')
+module.exports = TeamMember;
