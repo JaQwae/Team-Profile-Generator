@@ -1,1 +1,0 @@
-const TeamMember = require('./scripts/teamMember');

@@ -5,11 +5,23 @@ class TeamMember {
         this.email = email;
     }
 
-    // console log values
+    // console log values (test only)
     consoleValues(){
         console.log(`${this.name}`);
         console.log(`${this.id}`);
         console.log(`${this.email}`);
+    }
+    
+    getName(){
+        return this.name;
+    }
+
+    getId(){
+        return this.id;
+    }
+
+    getEmail(){
+        return this.email;
     }
 }
 
