@@ -72,7 +72,7 @@ const selectionMenu = () => {
         type: 'list',
         message: "What would you like to do next?",
         name: 'jobType',
-        choices: ['Add an engineer', 'Add an intern', 'There are no more employees to add, select to continue'],
+        choices: ['Add an engineer', 'Add an intern', 'Finished building my team'],
         }
     ]).then((answers) => {
         // console.log(answers.jobType) (delete when section is finished)
