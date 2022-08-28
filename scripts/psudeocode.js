@@ -32,15 +32,3 @@
 // THEN I exit the application, and the HTML is generated
 
 
-
-
-
-// use this for testing js file before test
-
-  // console log values (test only)
-    // consoleValues(){
-    //     console.log(`${this.name}`);
-    //     console.log(`${this.id}`);
-    //     console.log(`${this.email}`);
-    //     console.log(`${this.officeNumber}`);
-    // }
