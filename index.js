@@ -107,7 +107,7 @@ const engineerPrompt = () => {
         },
         {
             type: 'input',
-            message: "What there ID number",
+            message: "What is their ID number",
             name: 'engineerId',
             validate: (engineerId) =>{
                 if(engineerId){
@@ -150,9 +150,65 @@ const engineerPrompt = () => {
     })
 };
 
+
 const internPrompt = () => {
-    console.log('AAI')
-}
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "What is the intern's name?",
+            name: 'internName',
+            validate: (internName) =>{
+                if(internName){
+                    return true
+                } else{
+                    return "Required, Please enter an intern's name."
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is their ID number",
+            name: 'internId',
+            validate: (internId) =>{
+                if(internId){
+                    return true
+                } else{
+                    return 'Required, Please enter their ID number.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is your email address?",
+            name: 'internEmail',
+            validate: (internEmail) =>{
+                if(internEmail){
+                    return true
+                } else{
+                    return 'Required, Please enter their email address.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What school do they attend?",
+            name: 'internSchool',
+            validate: (internSchool) =>{
+                if(internSchool){
+                    return true
+                } else{
+                    return 'Required, Please enter the school that they attend.'
+                }
+            }
+        }
+    ]).then((answers) => {
+        console.log(answers.internName);
+        console.log(answers.internId);
+        console.log(answers.internEmail);
+        console.log(answers.internSchool);
+        selectionMenu();
+    })
+};
 
 // delete once functionality for this part is figured out **********
 const defaultAction = () => {
