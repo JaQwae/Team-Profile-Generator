@@ -83,10 +83,9 @@ const selectionMenu = () => {
             case 'Add an intern':
                 internPrompt();
                 break;
-            case 'There are no more employees to add, select to continue.':
-                console.log('Done');
-                break;
+            // think of some functionality to start generating the html ***********
             default:
+                defaultAction();
                 break;
         }
     })
@@ -100,6 +99,10 @@ const internPrompt = () => {
     console.log('AAI')
 }
 
+// delete once functionality for this part is figured out **********
+const defaultAction = () => {
+    console.log('Default action')
+}
 
 
 
