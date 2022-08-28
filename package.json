@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^3.4.1",
     "inquirer": "^8.2.4"
   },
   "devDependencies": {
