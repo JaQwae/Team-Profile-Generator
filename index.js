@@ -14,7 +14,43 @@ const managerPrompt = [
             if(managerName){
                 return true
             } else{
-                return 'Nothing inputted, please enter your name.'
+                return 'Required, Please enter your name.'
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "What is your ID",
+        name: 'managerId',
+        validate: (managerId) =>{
+            if(managerId){
+                return true
+            } else{
+                return 'Required, Please enter your ID number.'
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "What is your email address?",
+        name: 'managerEmail',
+        validate: (managerEmail) =>{
+            if(managerEmail){
+                return true
+            } else{
+                return 'Required, Please enter your email address.'
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "What the office phone number?",
+        name: 'officeNumber',
+        validate: (officeNumber) =>{
+            if(officeNumber){
+                return true
+            } else{
+                return 'Required, Please the office phone number.'
             }
         }
     },
