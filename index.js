@@ -5,16 +5,16 @@ const Intern = require('./lib/intern');
 // const fs = require('fs');
 // const generatehtml = require('./scripts/generatehtml');
 
-const managerprompt = [
+const managerPrompt = [
     {
         type: 'input',
-        message: "What is the manager's name?",
+        message: "What is your name?",
         name: 'managerName',
         validate: (managerName) =>{
             if(managerName){
                 return true
             } else{
-                return 'Required field left blank, please enter a title.'
+                return 'Nothing inputted, please enter your name.'
             }
         }
     },
@@ -63,7 +63,7 @@ const managerprompt = [
 
 // Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
+    inquirer.prompt(managerPrompt)
     .then((answers) => {
         console.log(answers);
     // let answersInputs = generatehtml(answers);
