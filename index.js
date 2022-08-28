@@ -75,4 +75,4 @@ function init() {
 init();
 
 //exports
-module.exports = questions;
+module.exports = managerPrompt;
