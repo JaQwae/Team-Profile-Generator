@@ -1,1 +1,1 @@
-const Manager = require('./scripts/teamManager')
+const Manager = require('./scripts/manager')
