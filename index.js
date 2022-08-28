@@ -1,1 +1,1 @@
-const Manager = require('./scripts/manager')
+// const Intern = require('./scripts/intern')
