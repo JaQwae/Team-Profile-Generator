@@ -5,7 +5,9 @@ const Intern = require('./lib/intern');
 // const fs = require('fs');
 // const generatehtml = require('./scripts/generatehtml');
 
+// Information enter form prompt gets push in here 
 const employees = [];
+
 
 const managerPrompt = () => {
     return inquirer.prompt([
@@ -57,15 +59,19 @@ const managerPrompt = () => {
                 }
             }
         }
+    // creates a new object for the manager class and pushes it to employees array
     ]).then((answers) => {
         const manager = new Manager (answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
-        console.log(manager);
+        employees.push(manager);
         selectionMenu();
     })
 };
 
-managerPrompt()
+// starts the program
+managerPrompt();
 
+
+// Allows you to select an employee type or generate HTML
 const selectionMenu = () => {
     return inquirer.prompt([
         {
@@ -75,11 +81,12 @@ const selectionMenu = () => {
         choices: ['Add an engineer', 'Add an intern', 'Finished building my team'],
         }
     ]).then((answers) => {
-        // console.log(answers.jobType) (delete when section is finished)
         switch(answers.jobType) {
+            // init engineer prompt
             case 'Add an engineer':
                 engineerPrompt();
                 break;
+            // init intern prompt
             case 'Add an intern':
                 internPrompt();
                 break;
@@ -90,6 +97,7 @@ const selectionMenu = () => {
         }
     })
 };
+
 
 const engineerPrompt = () => {
     return inquirer.prompt([
@@ -141,9 +149,10 @@ const engineerPrompt = () => {
                 }
             }
         }
+    // creates a new object for the engineer class and pushes it to employees array
     ]).then((answers) => {
         const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
-        console.log(engineer);
+        employees.push(engineer);
         selectionMenu();
     })
 };
@@ -199,9 +208,10 @@ const internPrompt = () => {
                 }
             }
         }
+    // creates a new object for the intern class and pushes it to employees array
     ]).then((answers) => {
         const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-        console.log(intern);
+        employees.push(intern);
         selectionMenu();
     })
 };
@@ -211,9 +221,7 @@ const defaultAction = () => {
     console.log('Default action')
 }
 
-// module.export = (find a way to export all info into generateHtml)
-
-
+module.exports = employees;
 
 
 
