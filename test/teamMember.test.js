@@ -1,4 +1,4 @@
-const TeamMember = require('../scripts/teamMember');
+const TeamMember = require('../lib//teamMember');
 
 const testMember = new TeamMember('Tom', 1234, 'tomtest@gmail.com');
 

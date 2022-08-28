@@ -1,4 +1,4 @@
-const Intern = require('../scripts/intern');
+const Intern = require('../lib//intern');
 
 const testIntern = new Intern('Tom', 1234, 'tomtest@gmail.com', 'A&M');
 

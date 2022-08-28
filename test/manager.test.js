@@ -1,4 +1,4 @@
-const Manager = require('../scripts/manager');
+const Manager = require('../lib//manager');
 
 const testManager = new Manager('Tom', 1234, 'tomtest@gmail.com', 5678);
 
