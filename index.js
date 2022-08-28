@@ -5,56 +5,79 @@ const Intern = require('./lib/intern');
 // const fs = require('fs');
 // const generatehtml = require('./scripts/generatehtml');
 
-const managerPrompt = [
-    {
-        type: 'input',
-        message: "What is your name?",
-        name: 'managerName',
-        validate: (managerName) =>{
-            if(managerName){
-                return true
-            } else{
-                return 'Required, Please enter your name.'
+const managerPrompt = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "What is your name?",
+            name: 'managerName',
+            validate: (managerName) =>{
+                if(managerName){
+                    return true
+                } else{
+                    return 'Required, Please enter your name.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is your ID",
+            name: 'managerId',
+            validate: (managerId) =>{
+                if(managerId){
+                    return true
+                } else{
+                    return 'Required, Please enter your ID number.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is your email address?",
+            name: 'managerEmail',
+            validate: (managerEmail) =>{
+                if(managerEmail){
+                    return true
+                } else{
+                    return 'Required, Please enter your email address.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What the office phone number?",
+            name: 'officeNumber',
+            validate: (officeNumber) =>{
+                if(officeNumber){
+                    return true
+                } else{
+                    return 'Required, Please the office phone number.'
+                }
             }
         }
-    },
-    {
-        type: 'input',
-        message: "What is your ID",
-        name: 'managerId',
-        validate: (managerId) =>{
-            if(managerId){
-                return true
-            } else{
-                return 'Required, Please enter your ID number.'
-            }
+    ]).then((answers) => {
+        console.log(answers.managerName);
+        console.log(answers.managerId);
+        console.log(answers.managerEmail);
+        console.log(answers.officeNumber);
+        selectionMenu();
+    })
+};
+
+managerPrompt()
+
+const selectionMenu = () => {
+    return inquirer.prompt([
+        {
+        type: 'list',
+        message: "What would you like to do next",
+        name: 'jobType',
+        choices: ['Add an engineer', 'Add an intern', 'There are no more employees to select, continue to page'],
         }
-    },
-    {
-        type: 'input',
-        message: "What is your email address?",
-        name: 'managerEmail',
-        validate: (managerEmail) =>{
-            if(managerEmail){
-                return true
-            } else{
-                return 'Required, Please enter your email address.'
-            }
-        }
-    },
-    {
-        type: 'input',
-        message: "What the office phone number?",
-        name: 'officeNumber',
-        validate: (officeNumber) =>{
-            if(officeNumber){
-                return true
-            } else{
-                return 'Required, Please the office phone number.'
-            }
-        }
-    },
-]
+    ]).then((answers) => {
+        console.log(answers);
+    })
+};
 
 
 
@@ -98,17 +121,17 @@ const managerPrompt = [
 // };
 
 // Create a function to initialize app
-function init() {
-    inquirer.prompt(managerPrompt)
-    .then((answers) => {
-        console.log(answers);
+// function init() {
+//     inquirer.prompt(managerPrompt)
+//     .then((answers) => {
+//         console.log(answers);
     // let answersInputs = generatehtml(answers);
     // writeToFile(answersInputs)
-    });
-}
+    //});
+// }
 
 // Function call to initialize app
-init();
+// init();
 
 //exports
 module.exports = managerPrompt;
