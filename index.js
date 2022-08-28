@@ -1,1 +1,0 @@
-// const Intern = require('./scripts/intern')
