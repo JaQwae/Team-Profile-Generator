@@ -1,0 +1,30 @@
+:root{
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+#h1-break {
+    height:5px;
+    border-width:0;
+    background-color:black;
+}
+
+#card-container{
+    display: flex;
+}
+.card{
+    border-style: solid;
+    border-color: black;
+    margin: 30px;
+}
+
+.card-body {
+    text-align: center;
+}
+.icon {
+    max-width: 200px;
+    max-height: 175px;
+}
