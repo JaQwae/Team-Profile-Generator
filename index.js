@@ -5,6 +5,8 @@ const Intern = require('./lib/intern');
 // const fs = require('fs');
 // const generatehtml = require('./scripts/generatehtml');
 
+const employees = [];
+
 const managerPrompt = () => {
     return inquirer.prompt([
         {
@@ -56,10 +58,8 @@ const managerPrompt = () => {
             }
         }
     ]).then((answers) => {
-        console.log(answers.managerName);
-        console.log(answers.managerId);
-        console.log(answers.managerEmail);
-        console.log(answers.officeNumber);
+        const manager = new Manager (answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+        console.log(manager);
         selectionMenu();
     })
 };
@@ -142,10 +142,8 @@ const engineerPrompt = () => {
             }
         }
     ]).then((answers) => {
-        console.log(answers.engineerName);
-        console.log(answers.engineerId);
-        console.log(answers.engineerEmail);
-        console.log(answers.engineerGitHub);
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
+        console.log(engineer);
         selectionMenu();
     })
 };
@@ -202,10 +200,8 @@ const internPrompt = () => {
             }
         }
     ]).then((answers) => {
-        console.log(answers.internName);
-        console.log(answers.internId);
-        console.log(answers.internEmail);
-        console.log(answers.internSchool);
+        const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        console.log(intern);
         selectionMenu();
     })
 };
@@ -215,7 +211,7 @@ const defaultAction = () => {
     console.log('Default action')
 }
 
-
+// module.export = (find a way to export all info into generateHtml)
 
 
 
