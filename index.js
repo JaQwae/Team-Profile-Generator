@@ -70,14 +70,35 @@ const selectionMenu = () => {
     return inquirer.prompt([
         {
         type: 'list',
-        message: "What would you like to do next",
+        message: "What would you like to do next?",
         name: 'jobType',
-        choices: ['Add an engineer', 'Add an intern', 'There are no more employees to select, continue to page'],
+        choices: ['Add an engineer', 'Add an intern', 'There are no more employees to add, select to continue'],
         }
     ]).then((answers) => {
-        console.log(answers);
+        // console.log(answers.jobType) (delete when section is finished)
+        switch(answers.jobType) {
+            case 'Add an engineer':
+                engineerPrompt();
+                break;
+            case 'Add an intern':
+                internPrompt();
+                break;
+            case 'There are no more employees to add, select to continue.':
+                console.log('Done');
+                break;
+            default:
+                break;
+        }
     })
 };
+
+const engineerPrompt = () => {
+    console.log('AAE')
+}
+
+const internPrompt = () => {
+    console.log('AAI')
+}
 
 
 
