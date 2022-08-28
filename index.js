@@ -21,7 +21,7 @@ const managerPrompt = () => {
         },
         {
             type: 'input',
-            message: "What is your ID",
+            message: "What is your ID number",
             name: 'managerId',
             validate: (managerId) =>{
                 if(managerId){
@@ -92,8 +92,63 @@ const selectionMenu = () => {
 };
 
 const engineerPrompt = () => {
-    console.log('AAE')
-}
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "What is the engineer's name?",
+            name: 'engineerName',
+            validate: (engineerName) =>{
+                if(engineerName){
+                    return true
+                } else{
+                    return "Required, Please enter an engineer's name."
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What there ID number",
+            name: 'engineerId',
+            validate: (engineerId) =>{
+                if(engineerId){
+                    return true
+                } else{
+                    return 'Required, Please enter their ID number.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is your email address?",
+            name: 'engineerEmail',
+            validate: (engineerEmail) =>{
+                if(engineerEmail){
+                    return true
+                } else{
+                    return 'Required, Please enter their email address.'
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "What is their GitHub username?",
+            name: 'engineerGitHub',
+            validate: (engineerGitHub) =>{
+                if(engineerGitHub){
+                    return true
+                } else{
+                    return 'Required, Please their GitHub username.'
+                }
+            }
+        }
+    ]).then((answers) => {
+        console.log(answers.engineerName);
+        console.log(answers.engineerId);
+        console.log(answers.engineerEmail);
+        console.log(answers.engineerGitHub);
+        selectionMenu();
+    })
+};
 
 const internPrompt = () => {
     console.log('AAI')
