@@ -5,7 +5,7 @@ const Intern = require('./lib/intern');
 // const fs = require('fs');
 // const generatehtml = require('./scripts/generatehtml');
 
-questions = [
+const managerprompt = [
     {
         type: 'input',
         message: "What is the manager's name?",
