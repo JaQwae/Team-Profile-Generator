@@ -232,15 +232,6 @@ const creatingHtmlFile = () => {
 //starts the program
 managerPrompt();
 
-// use as testing to see answers in console
-// function testCallBack(){
-//     managerPrompt();
-//     setTimeout(()=>{
-//         console.log(employees);
-//     },5000);
-// }
-// testCallBack();
-
 module.exports = employees;
 
 
