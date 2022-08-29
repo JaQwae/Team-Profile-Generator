@@ -2,9 +2,9 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-// const fs = require('fs');
+const fs = require('fs');
 const generateHtml = require('./lib/generatehtml');
-const { fstat } = require('fs');
+
 
 // Information enter form prompt gets push in here 
 const employees = [];
@@ -90,7 +90,7 @@ const selectionMenu = () => {
                 break;
             // think of some functionality to start generating the html ***********
             default:
-                defaultAction();
+                creatingHtmlFile();
                 break;
         }
     })
@@ -216,11 +216,18 @@ const internPrompt = () => {
 
 // delete once functionality for this part is figured out **********
 const creatingHtmlFile = () => {
-    if (!fstat.existsSync(OUTPUT_Dir)) {
-        fs 
-    }
-    console.log('Default action')
-}
+    return new Promise ((resolve, reject) => {
+        fs.writeFile('./index.HTML', buildingTeam(employees), err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true
+            });
+        });
+    });
+};
 
 //starts the program
 managerPrompt();
