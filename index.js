@@ -3,7 +3,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 // const fs = require('fs');
-// const generatehtml = require('./scripts/generatehtml');
+const generateHtml = require('./lib/generatehtml');
 
 // Information enter form prompt gets push in here 
 const employees = [];
@@ -66,9 +66,6 @@ const managerPrompt = () => {
         selectionMenu();
     })
 };
-
-// starts the program
-managerPrompt();
 
 
 // Allows you to select an employee type or generate HTML
@@ -220,6 +217,18 @@ const internPrompt = () => {
 const defaultAction = () => {
     console.log('Default action')
 }
+
+// starts the program
+// managerPrompt();
+
+// use as testing to see answers in console
+function testCallBack(){
+    managerPrompt();
+    setTimeout(()=>{
+        console.log(employees);
+    },5000);
+}
+testCallBack();
 
 module.exports = employees;
 
