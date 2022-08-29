@@ -217,7 +217,7 @@ const internPrompt = () => {
 // delete once functionality for this part is figured out **********
 const creatingHtmlFile = () => {
     return new Promise ((resolve, reject) => {
-        fs.writeFile('./index.HTML', buildingTeam(employees), err => {
+        fs.writeFile('./index.HTML', generateHtml(employees), err => {
             if (err) {
                 reject(err);
                 return;
