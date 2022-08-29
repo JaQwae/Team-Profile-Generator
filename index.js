@@ -4,6 +4,7 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 // const fs = require('fs');
 const generateHtml = require('./lib/generatehtml');
+const { fstat } = require('fs');
 
 // Information enter form prompt gets push in here 
 const employees = [];
@@ -214,21 +215,24 @@ const internPrompt = () => {
 };
 
 // delete once functionality for this part is figured out **********
-const defaultAction = () => {
+const creatingHtmlFile = () => {
+    if (!fstat.existsSync(OUTPUT_Dir)) {
+        fs 
+    }
     console.log('Default action')
 }
 
-// starts the program
-// managerPrompt();
+//starts the program
+managerPrompt();
 
 // use as testing to see answers in console
-function testCallBack(){
-    managerPrompt();
-    setTimeout(()=>{
-        console.log(employees);
-    },5000);
-}
-testCallBack();
+// function testCallBack(){
+//     managerPrompt();
+//     setTimeout(()=>{
+//         console.log(employees);
+//     },5000);
+// }
+// testCallBack();
 
 module.exports = employees;
 
