@@ -76,7 +76,7 @@ const selectionMenu = () => {
         type: 'list',
         message: "What would you like to do next?",
         name: 'jobType',
-        choices: ['Add an engineer', 'Add an intern', 'Finished building my team'],
+        choices: ['Add an engineer', 'Add an intern', "I'm finished"],
         }
     ]).then((answers) => {
         switch(answers.jobType) {
