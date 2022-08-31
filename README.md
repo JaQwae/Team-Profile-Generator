@@ -69,6 +69,10 @@ If all steps above are completed correctly, then the application should generate
 ### Video:
 
 
+https://user-images.githubusercontent.com/105896967/187588683-f74a348d-493e-4103-8900-36c26c466f11.mp4
+
+
+
 ## Contributors:
 
 - JaQwae Ellison
