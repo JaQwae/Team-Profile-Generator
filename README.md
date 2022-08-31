@@ -68,7 +68,7 @@ If all steps above are completed correctly, then the application should generate
 
 ### Video:
 
-[![Video demonstration of the program running in the terminal](https://drive.google.com/file/d/194AtJAlH3fv-Nby2SLdeVvnM5wFkYYlx/view)]
+<iframe src="https://drive.google.com/file/d/194AtJAlH3fv-Nby2SLdeVvnM5wFkYYlx/preview" width="640" height="480"></iframe>
 
   
 
