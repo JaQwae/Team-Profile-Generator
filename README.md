@@ -68,7 +68,7 @@ If all steps above are completed correctly, then the application should generate
 
 ### Video:
 
-![insert image description here](.assets/images/..png)
+https://drive.google.com/file/d/194AtJAlH3fv-Nby2SLdeVvnM5wFkYYlx/view
 
   
 
